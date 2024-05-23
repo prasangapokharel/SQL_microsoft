@@ -1,0 +1,2 @@
+alter table prasanga add 
+ram varchar(50);
