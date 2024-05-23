@@ -1,0 +1,94 @@
+SELECT: Retrieve data from a database.
+SELECT column1, column2 FROM table_name;
+
+SELECT DISTINCT: Retrieve unique records.
+SELECT DISTINCT column1 FROM table_name;
+
+WHERE: Filter records.
+SELECT column1, column2 FROM table_name WHERE condition;
+
+AND, OR, NOT: Combine multiple conditions.
+SELECT column1 FROM table_name WHERE condition1 AND condition2;
+SELECT column1 FROM table_name WHERE condition1 OR condition2;
+SELECT column1 FROM table_name WHERE NOT condition;
+
+Aggregate Functions
+COUNT: Count the number of rows.
+SELECT COUNT(column1) FROM table_name;
+
+SUM: Calculate the sum of a numeric column.
+SELECT SUM(column1) FROM table_name;
+
+AVG: Calculate the average of a numeric column.
+SELECT AVG(column1) FROM table_name;
+
+MIN, MAX: Find the minimum or maximum value.
+SELECT MIN(column1) FROM table_name;
+SELECT MAX(column1) FROM table_name;
+
+Grouping and Sorting
+GROUP BY: Group rows that have the same values in specified columns.
+SELECT column1, COUNT(*) FROM table_name GROUP BY column1;
+
+HAVING: Filter groups based on aggregate functions.
+SELECT column1, COUNT() FROM table_name GROUP BY column1 HAVING COUNT() > 1;
+
+ORDER BY: Sort the result set.
+SELECT column1, column2 FROM table_name ORDER BY column1 ASC;
+SELECT column1, column2 FROM table_name ORDER BY column1 DESC;
+
+Joins
+INNER JOIN: Return records that have matching values in both tables.
+SELECT table1.column1, table2.column2 FROM table1 INNER JOIN table2 ON table1.common_field = table2.common_field;
+
+LEFT JOIN (or LEFT OUTER JOIN): Return all records from the left table, and the matched records from the right table.
+SELECT table1.column1, table2.column2 FROM table1 LEFT JOIN table2 ON table1.common_field = table2.common_field;
+
+RIGHT JOIN (or RIGHT OUTER JOIN): Return all records from the right table, and the matched records from the left table.
+SELECT table1.column1, table2.column2 FROM table1 RIGHT JOIN table2 ON table1.common_field = table2.common_field;
+
+FULL JOIN (or FULL OUTER JOIN): Return all records when there is a match in either left or right table.
+SELECT table1.column1, table2.column2 FROM table1 FULL JOIN table2 ON table1.common_field = table2.common_field;
+
+Modifying Data
+INSERT INTO: Insert new data into a table.
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+
+UPDATE: Update existing data within a table.
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+
+DELETE: Delete records from a table.
+DELETE FROM table_name WHERE condition;
+
+Table Management
+CREATE TABLE: Create a new table.
+CREATE TABLE table_name (column1 datatype, column2 datatype, column3 datatype);
+
+ALTER TABLE: Modify an existing table (add, modify, delete columns).
+ALTER TABLE table_name ADD column_name datatype;
+ALTER TABLE table_name MODIFY COLUMN column_name datatype;
+ALTER TABLE table_name DROP COLUMN column_name;
+
+DROP TABLE: Delete a table.
+DROP TABLE table_name;
+
+Indexes
+CREATE INDEX: Create an index on a table.
+CREATE INDEX index_name ON table_name (column1, column2);
+
+DROP INDEX: Delete an index.
+DROP INDEX index_name;
+
+Views
+CREATE VIEW: Create a view.
+CREATE VIEW view_name AS SELECT column1, column2 FROM table_name WHERE condition;
+
+DROP VIEW: Delete a view.
+DROP VIEW view_name;
+
+Miscellaneous
+UNION: Combine the result set of two or more SELECT statements.
+SELECT column1 FROM table1 UNION SELECT column1 FROM table2;
+
+EXISTS: Check for the existence of any record in a subquery.
+SELECT column1 FROM table_name WHERE EXISTS (SELECT * FROM table2 WHERE condition);
